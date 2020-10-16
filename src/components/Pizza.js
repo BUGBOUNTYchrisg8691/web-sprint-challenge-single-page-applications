@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Link, useHistory, useRouteMatch} from "react-router-dom"
+
+import ToggleSwitch from "./ToggleSwitch/ToggleSwitch"
 
 export default function Pizza(props) {
   const {form, change, submit, disabled, errs} = props
@@ -91,6 +93,12 @@ export default function Pizza(props) {
                 onChange={onChange}
               />
             </label>
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
+            Gluten-Free Crust
+            <ToggleSwitch onChange={onChange} form={form} Name="Gluten-Free Crust" />
           </label>
         </div>
         <div className="form-group">

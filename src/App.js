@@ -17,6 +17,7 @@ const initialFormVals = {
   pepperoni: false,
   onions: false,
   pineapple: false,
+  "Gluten-Free Crust": false,
   specialInstructions: ''
 }
 
@@ -65,6 +66,7 @@ const App = () => {
         "onions",
         "pineapple"
       ].filter(topping => form[topping]),
+      "Gluten-Free Crust": form.glutenFree,
       specialInstructions: form.specialInstructions
     }
     postNewOrder(newOrder)
