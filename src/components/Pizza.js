@@ -90,6 +90,17 @@ export default function Pizza(props) {
             </label>
           </label>
         </div>
+        <div className="form-group">
+          <label>
+            Special Instructions
+            <input
+              className="form-control"
+              type="text"
+              name="specialInstructions"
+              onChange={onChange}
+            />
+          </label>
+        </div>
         <div className="form-group errors">
           <div>{form.orderName.length > 0 && errs.orderName}</div>
           <div>{errs.size}</div>

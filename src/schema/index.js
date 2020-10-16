@@ -5,12 +5,12 @@ export default yup.object().shape({
     .min(2, "Name must contain at least 2 characters")
     .required("Name for order is required"),
   size: yup.string()
-    .oneOf(["small", "medium", "large"])
+    // .oneOf(["small", "medium", "large"])
     .required("Please choose a size"),
-  sausage: yup.boolean(),
-  pepperoni: yup.boolean(),
-  onions: yup.boolean(),
-  pineapple: yup.boolean(),
+  sausage: yup.boolean().oneOf([true, false]),
+  pepperoni: yup.boolean().oneOf([true, false]),
+  onions: yup.boolean().oneOf([true, false]),
+  pineapple: yup.boolean().oneOf([true, false]),
   specialInstruction: yup.string()
     .max(60, "Maximum of 60 characters")
 })

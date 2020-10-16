@@ -34,7 +34,7 @@ const App = () => {
 
   const change = (name, value) => {
     yup
-      .reach(schema)
+      .reach(schema, name)
       .validate(value)
       .then(() => {
         setErrs({
