@@ -25,5 +25,7 @@ describe("sprint test", () => {
     size().select("small")
     sausage().check()
     submit().should("be.enabled")
+    submit().click()
+    submit().should("be.disabled")
   })
 })
