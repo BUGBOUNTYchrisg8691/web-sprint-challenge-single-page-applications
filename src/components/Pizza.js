@@ -5,8 +5,8 @@ import ToggleSwitch from "./ToggleSwitch/ToggleSwitch"
 
 export default function Pizza(props) {
   const {form, change, submit, disabled, errs} = props
-    const {url} = useRouteMatch()
-    const hist = useHistory()
+  const {url} = useRouteMatch()
+  const hist = useHistory()
 
   const onSubmit = e => {
     e.preventDefault()
