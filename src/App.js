@@ -102,7 +102,7 @@ const App = () => {
           Order
         </Link>
         <Switch>
-          <Route path="/pizza/confirm">
+          <Route path="/pizza/orders">
             <Confirm />
           </Route>
           <Route path="/pizza">

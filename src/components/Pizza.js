@@ -1,12 +1,15 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import {Link, useHistory, useRouteMatch} from "react-router-dom"
 
 export default function Pizza(props) {
   const {form, change, submit, disabled, errs} = props
+    const {url} = useRouteMatch()
+    const hist = useHistory()
 
   const onSubmit = e => {
     e.preventDefault()
     submit()
+    hist.push(`${url}/orders`)
   }
 
   const onChange = e => {
