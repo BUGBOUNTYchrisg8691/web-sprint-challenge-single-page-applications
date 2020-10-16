@@ -95,9 +95,7 @@ export default function Pizza(props) {
           <div>{errs.size}</div>
           <div>{form.specialInstructions.length > 0 && errs.specialInstructions}</div>
         </div>
-        <Link to="/pizza/confirm">
-          <button disabled={disabled}>Place Order</button>
-        </Link>
+        <button disabled={disabled}>Place Order</button>
       </form>
     </div>
   )

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Axios from "axios"
 import {Route, Link, Switch} from "react-router-dom"
+import {v4 as uuid} from "uuid"
 
 import WelcomePage from "./components/WelcomePage";
 import Pizza from "./components/Pizza"
@@ -55,6 +56,7 @@ const App = () => {
 
   const submit = () => {
     const newOrder = {
+      id: uuid(),
       orderName: form.orderName.trim(),
       size: form.size,
       toppings: [
@@ -65,21 +67,20 @@ const App = () => {
       ].filter(topping => form[topping]),
       specialInstructions: form.specialInstructions
     }
-    setOrders([...orders, newOrder])
-    // postNewOrder(newOrder)
+    postNewOrder(newOrder)
   }
 
   const postNewOrder = newOrder => {
     Axios
-      .post("https://reqres.in/", newOrder)
-      .then(resp => console.log(resp))
-      // .then(resp => {
-      //   setOrders([
-      //     ...orders,
-      //     resp.data
-      //   ])
-      //   setForm(initialFormVals)
-      // })
+      .post("https://reqres.in/api/users", newOrder)
+      .then(resp => {
+        setOrders([
+          ...orders,
+          resp.data
+        ])
+        console.log(resp.data)
+        setForm(initialFormVals)
+      })
       .catch(err => console.log(err))
   }
 
